@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>只背单词</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>只背单词</h1>
+        </header>
+        <main id="main-content">
+            <div id="upload-section">
+                <h2>上传单词文件</h2>
+                <p>请上传一个 TXT 文件，格式为：<英语词汇> <中文翻译> <容易混淆的中文翻译></p>
+                <p>例如：<apple> <n.苹果> <n.香蕉></p>
+                <input type="file" id="file-input" accept=".txt">
+                
+                <div id="manual-input-area">
+                    <p>或者在下方手动输入单词：</p>
+                    <div id="word-input-table">
+                        <div class="table-header">
+                            <div>英文</div>
+                            <div>中文翻译</div>
+                            <div>混淆中文</div>
+                        </div>
+                        <div id="table-body">
+                             <div class="table-row">
+                                <input type="text" class="english-input" placeholder="e.g., apple">
+                                <input type="text" class="correct-input" placeholder="e.g., n.苹果">
+                                <input type="text" class="incorrect-input" placeholder="e.g., n.香蕉">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="add-row-btn">+</button>
+                </div>
+
+                <button id="start-btn">开始学习</button>
+            </div>
+            <div id="flashcard-section" class="hidden">
+                <div class="word-card">
+                    <div class="word" id="flashcard-word"></div>
+                    <div class="options">
+                        <button class="option" id="option1"></button>
+                        <button class="option" id="option2"></button>
+                    </div>
+                </div>
+                <div id="flashcard-result" class="hidden"></div>
+            </div>
+            <div id="spelling-section" class="hidden">
+                <div class="word-card">
+                    <div class="translation" id="spelling-translation"></div>
+                    <input type="text" id="spelling-input" placeholder="输入单词拼写">
+                    <button id="check-spelling-btn">检查</button>
+                </div>
+                 <div id="spelling-result"></div>
+            </div>
+             <div id="summary-section" class="hidden">
+                <h2>本次学习结束</h2>
+                <p id="accuracy-text"></p>
+                <button id="restart-btn">重新开始</button>
+            </div>
+        </main>
+        <footer class="hidden">
+            <nav>
+                <button id="nav-flashcard">刷词</button>
+                <button id="nav-spelling">练拼写</button>
+            </nav>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

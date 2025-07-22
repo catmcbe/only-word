@@ -1,4 +1,1 @@
-# 请替换为您自己的API配置
-apikey=
-url=
-model=
+
